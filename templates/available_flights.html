@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Available  flights</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href=http://www.freshdesignweb.com/wp-content/themes/fv24/images/icon.ico />
+    <link rel="stylesheet" type="text/css" href={% static 'styles.css' %} media="all" />
+    <link rel="stylesheet" type="text/css" href={% static 'demo.css' %} media="all" />
+</head>
+<body>
+<div class="container">
+			<header>
+				<h1>Available Flights</h1>
+            </header>       
+	<header>
+        {% for flight in flights %}
+<div id="fdw-pricing-table">
+    <div class="plan plan1">
+        <div class="header">{{flight.name}}</div>
+        <div class="price">₹{{flight.price}}</div>  
+
+        <ul>
+            <li><b>Source : </b>{{flight.source}} </li>
+            <li><b>Destination : </b>{{flight.destination}}</li>
+            <li><b>Departure Date : </b>{{flight.departure_date}}</li>
+            <li><b>Departure Time : </b>{{flight.departure_time}}</li>
+            <li><b>Available Seats :</b>{{flight.available_seats}}</li>
+        </ul>
+        <a class="signup" href= "http://127.0.0.1:8000/book/{{seats}}/{{flight.id}}/"  >Book now</a> 
+        <!-- <form class= action="http://127.0.0.1:8000/book">
+            <lable for="numseats">no of seat:</lable>
+            <input type="text" name="numseats" value="" id="numseats">
+            <input class="signup" type="submit"  value="BOOK" />
+        </form> -->
+               
+    </div>
+    {% endfor %}
+    	</header>
+    
+</div>
+</body>
+</html>

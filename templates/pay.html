@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if form.errors %}
+<p class="error" >Invalid Input. </p>
+{% endif %}
+
+        <div class="card">
+        <div class="card-header">
+            <div class="col-3">
+        From:{{ flight.source }}
+            </div>
+            <div class="col-3">
+        To:{{ flight.destination }} </div></div>
+        <div class="card-body" >
+		<h5 class="card-title">{{ flight.name}} </h5>
+            <!-- <h6 class="card-subtitle mb-2 text-muted"> From:{{ flight.departure_time }} To:{{ flight.arrival_time }}</h6> -->
+        <br>
+        <p class="card-text">
+            Total members :{{ seats }}<br>
+            Rate :{{ rate }}<br>
+            Total : {{ seats }} x {{ rate }} = {{ total }}
+        </p>
+
+        </div>
+        </div>
+
+    <form class="form-inline card " action="http://127.0.0.1:8000/book/{{seats}}/{{flight.id}}/" method="post">{%csrf_token%}
+        <lable for="cardnum">Card Number:</lable>
+        <input type="number" name="cardnum" value="" id="cardnum">
+    <!-- {% csrf_token %}
+    {{ form.as_p }}
+        {% for x in list_form %}
+            <div class="form-inline">
+            {{ x.as_p }}
+            </div>
+        {% endfor %} -->
+    <input type="submit" class="btn-outline-primary btn" value="PAY" />
+</form>
+{%endblock%}
