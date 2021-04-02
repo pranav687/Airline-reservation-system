@@ -1,4 +1,4 @@
-<h1> airline reservation system
+<h1> airline reservation system</h1>
 
 This Project is created for learning purpose by  Pranav Sakariya and Vidur Sakhiya under guidance of 
 Prof.jigar Pandya.
