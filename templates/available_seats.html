@@ -1,0 +1,65 @@
+{% load static %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booking Seat widjet</title>
+        <link rel="stylesheet" href={% static 'seats.css' %}>
+        <!-- <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'> -->
+    </head>
+        
+    
+    <body>
+        <form action="/travel/book" method="post" enctype='multipart/form-data'> 
+            {% csrf_token %}
+            <div class="container">
+                <ul class="ks-cboxtags">
+                {% for key,val in map.items %}
+                    {% for num in val %}
+
+                        {% if num < 10 %}
+
+                            {% if num in unavailable_list %}
+                                <li><input type="checkbox" id="{{num}}" disabled value="{{num}}"><label for="{{num}}">0{{num}}</label></li>
+                            {% else %}
+                                <li><input type="checkbox" id="{{num}}" name="p_seat[]" value="{{num}}"><label for="{{num}}">0{{num}}</label></li>
+                            {%endif%}
+
+                        {% else %} 
+
+                            {% if num in unavailable_list %}
+                                <li><input type="checkbox" id="{{num}}" disabled value="{{num}}"><label for="{{num}}">{{num}}</label></li>
+                            {% else %}
+                                <li><input type="checkbox" id="{{num}}" name="p_seat[]" value="{{num}}"><label for="{{num}}">{{num}}</label></li>
+                            {%endif%}
+
+                        {%endif%}                     
+
+                    {% endfor %}
+                    <br>
+                {% endfor %}
+            </div> <br><br>
+            <table>
+        {% for var in num_list %}
+            <tr>
+                 <td> Passenger Name {{var}}: </td>
+                 <td><input type="text" name="p_name" /></td>
+            </tr>
+            <tr>
+                 <td> Age: </td>
+                 <td>
+                       <input type="number" name="p_age"/>
+                 </td>
+            </tr>
+        {% endfor %} 
+    
+
+            <tr>
+                 <td><input type="Submit" value="book" name="act">Submit Query</button> </td>
+            </tr>
+        </table>
+    </body>
+</html>

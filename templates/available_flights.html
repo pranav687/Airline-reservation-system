@@ -29,12 +29,9 @@
             <li><b>Departure Time : </b>{{flight.departure_time}}</li>
             <li><b>Available Seats :</b>{{flight.available_seats}}</li>
         </ul>
-        <a class="signup" href= "http://127.0.0.1:8000/book/{{seats}}/{{flight.id}}/"  >Book now</a> 
-        <!-- <form class= action="http://127.0.0.1:8000/book">
-            <lable for="numseats">no of seat:</lable>
-            <input type="text" name="numseats" value="" id="numseats">
-            <input class="signup" type="submit"  value="BOOK" />
-        </form> -->
+        <!-- <a class="signup" href= "/book/{{seats}}/{{flight.id}}/"  >Book now</a>  -->
+        <a class="signup" href= "/book?id={{flight.id}}&required_seats={{seats}}"  >Book now</a> 
+
                
     </div>
     {% endfor %}

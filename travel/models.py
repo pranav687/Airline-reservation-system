@@ -3,12 +3,9 @@ from datetime import datetime,date
 from django import utils
 
 
-class Destination(models.Model):
+class Announcement(models.Model):
     name = models.CharField(max_length=200)
-    img = models.ImageField(upload_to ='pics')
     desc = models.TextField()
-    price = models.IntegerField()
-    offer = models.BooleanField(False)
 
 class Flights(models.Model):
     name = models.CharField(max_length=200)
@@ -20,10 +17,12 @@ class Flights(models.Model):
     arrival_time = models.TimeField(default=utils.timezone.now)
     available_seats = models.IntegerField()
     #offer = models.BooleanField(default=False)
-
-class Tickets(models.Model):
+    
+class Passengers(models.Model):   
     flights = models.ForeignKey(Flights,on_delete=models.CASCADE)
-    num_seats = models.IntegerField()
-    cost = models.IntegerField()
+    passenger_name = models.CharField(max_length=200)
+    passenger_age = models.IntegerField()
+    seat_num =  models.IntegerField()
+    
 
 
