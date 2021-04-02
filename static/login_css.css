@@ -1,6 +1,7 @@
 body {
     padding: 5% 32%;
-    background-color: white;
+    background-image: url(images/plane2.jpg);
+    background-size: cover;
 }
 
 label {

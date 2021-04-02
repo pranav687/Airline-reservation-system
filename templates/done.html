@@ -1,29 +1,29 @@
-{% extends 'base.html' %}
-{% block title %}Success!!{% endblock %}
+{% load static %}
 
-{% block content %}
-
-
-        <div class="card">
-        <div class="card-header">
-            <div class="col-3">
-        From:{{ flight_obj.source }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'login_css.css' %}>
+</head>
+<body>
+    
+        <div>
+            <div>
+                <div>
+                    <h1>{{ flight_obj.name}} </h1><br>
+                    <h1>From: {{ flight_obj.source }}</h1>
+                </div>
+                <div>
+                    <h1>To: {{ flight_obj.destination }} </h1>
+                </div>
             </div>
-            <div class="col-3">
-        To:{{ flight_obj.destination }} </div></div>
-        <div class="card-body" >
-		<h5 class="card-title">{{ fligh_obj.name}} </h5>
-            <h6 class="card-subtitle mb-2 text-muted"> From:{{ flight_obj.departure_time }} To:{{ flight_obj.arrival_time }}</h6>
-        <br>
-        <p class="card-text">
-            Total members :{{ num }}<br>
-            Rate :{{ rate }}<br>
-            Total : {{ num }} x {{ offrate }} = {{ total }}
-        </p>
         </div>
-        </div>
-    <h4 class="alert alert-success">
-        Successfully booked !! 
-    </h4>
-
-{% endblock %}
+    <h1 style="color: green" >
+        Your Ticket is Successfully booked !! 
+    </h1>
+</body>
+</html>

@@ -8,10 +8,11 @@
                                 <title>Payment</title>
                                 <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
                                 <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
-                                <style>head,
-body {
-    background-color: #ffd7bc
-    
+                                <style>
+                               
+body {  
+    background-image: url(images/plane2.jpg);
+    background-size: cover;
 }
 
 .container {
@@ -99,7 +100,7 @@ input:focus {
                                 <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
                                 <script type='text/javascript'></script>
                             </head>
-                            <body oncontextmenu='return false' class='snippet-body'>
+                            <body oncontextmenu='return false'>
 
     <form class="form-inline card " action="/book" method="post">
         {%csrf_token%}

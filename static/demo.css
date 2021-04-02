@@ -3,11 +3,12 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	margin:0;
 	padding:0;
 }
-html,body {
+html {
 	margin:0;
 	padding:0;
 	height: 100%;
 }
+
 table {
 	border-collapse:collapse;
 	border-spacing:0;
@@ -40,7 +41,8 @@ section, header{
 /* General Demo Style */
 body{
 	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-	background:url(images/bgnoise_lg.png);
+	background-image: url(images/plane2.jpg);
+	background-size: cover;
 	font-weight: 400;
 	font-size: 15px;
 	color: #3a2127;

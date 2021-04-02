@@ -11,9 +11,9 @@ body {
     height: 100vh;
     background: #10d11a;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #5141db, #FFEFBA);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #6343f1, #FFEFBA);
+    background-image: url(images/plane2.jpg);
+    background-size: cover;
+    /*  */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }

@@ -22,7 +22,7 @@ def book_flight(request):
     global dict1
     if request.method=="GET":
         fid = int(request.GET["id"])
-        num = int(request.GET["sits"])
+        num = int(request.GET["required_seats"])
         print(fid)
         print(num)
         flight_obj = Flights.objects.get(pk=fid)           
